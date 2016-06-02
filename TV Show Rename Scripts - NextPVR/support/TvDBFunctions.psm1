@@ -1,5 +1,5 @@
 #TVDB Setup
-New-Variable -Name APIKey -value 'FA09B5D1D910A7AE' -Scope Global
+New-Variable -Name APIKey -value 'MYKEY' -Scope Global
 $mirrors= irm "Http://thetvdb.com/api/$apikey/mirrors.xml"
 $mirrorpath = $mirrors.Mirrors.Mirror | ? { $_.typemask -band 1} | get-random | select -expandproperty mirrorpath
 $languages = irm "$Mirrorpath/api/$apikey/languages.xml"
